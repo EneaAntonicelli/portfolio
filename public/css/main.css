@@ -1,0 +1,223 @@
+/* Universal content */
+html, body {
+    overflow-x: hidden;
+}
+/* Header content */
+.navbar.navbar-light.bg-light {
+    background-color: #ffffff!important;
+    
+}
+.dropdown .dropdownmenu{
+    padding: 20px;
+}
+.dropdown .dropdown-menu {
+    left: -155px;
+}
+
+
+
+.header {
+    min-height: 8em;
+}
+.header .btn.btn-outline-secondary {
+    float: right;
+    margin: 20px;
+}
+
+#top {
+    -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header button::after{
+    background: #ffffff;
+}
+a.navnar-brand img {
+    margin-left: 0;
+}
+
+/* Main content */
+
+#logoman {
+    margin-top: 30px;
+}
+.col-xs-12.col-sm-12.col-md-12.col-lg-12 img {
+    max-width: 100%;
+    height: auto;
+}
+.row {
+    background: #ffffff;
+    min-height: 20em;
+    /* padding: 2em; */
+}
+
+
+.row .col-sm-12 {
+    text-align: center;
+}
+.row .col-sm-12 h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    padding: 40px 0 20px 0;
+}
+.row .col-sm-12 h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+/* This is the main image */
+.col-sm-12 img {
+    display: block;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+.btnboatimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);     
+    background-color: rgba(255,255,255,0);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+}  
+
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem #A5B7C1;
+}
+
+.btnboatimg:hover {
+    background-color: rgba(255,255,255,.5);
+}
+
+/* 4 CARD CODE */
+
+.EGA_card {
+    min-height: 600px;
+    margin-top: 10px;
+}
+
+.cardrow {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.card img {
+    width: 50%;
+    padding: 40px 0 0 0;
+    transition: transform .3s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    animation: shake 0.2s; 
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg) scale(1.1); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg) ; }
+    40% { transform: translate(1px, -1px) rotate(1deg) scale(1.1); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg) scale(1.1); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg) scale(1.1); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.card .card-body {
+    margin-bottom: 30px;
+}
+.card-title {
+    margin-bottom: 1.75rem;
+}
+.col-xs-12.col-sm-12.col-md-12.col-lg-12 p{
+    padding: 20px;
+}
+
+.EGA_cardButton {
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: auto;
+    position: absolute;
+    bottom: 50px;
+    background-color: #514644;
+    border-color: #514644;
+}
+.EGA_cardButton:hover {
+    background-color: rgb(156, 172, 162);
+    border-color: rgb(156, 172, 162);
+}
+
+/* END OF 4 CARD CODE */
+
+/* FORM CONTENT */
+
+#contactcontainer {
+    /* border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px; */
+    padding: 2em;
+    text-align: left;
+}
+#contactcontainer h1 {
+    text-align: center;
+    padding-bottom: 2em;
+    font-size: 36px;    
+}
+.formactionpage {
+    width: 100%;
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: rgb(68, 116, 179);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #32557e;
+}
+
+/* END OF FORM CONTENT */
+
+    /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+    
+    @media (max-width: 768px) {
+        .wrapper {
+            display: none;
+        }
+     
+    }
