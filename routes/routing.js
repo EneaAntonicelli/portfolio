@@ -51,7 +51,7 @@ router.post("/user", (req, res) => {
 
     var mailOptions = {
         from: `${req.body.email}`,
-        to: `${req.body.email}`,
+        to: "eneasecondary@gmail.com",
         subject: `${req.body.email}`,
         text: `${req.body.message}`,
         replyTo: `${req.body.email}`
