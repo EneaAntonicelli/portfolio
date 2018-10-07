@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path"); 
+const nodemailer = require('nodemailer');
+
 
 
 // GET ROUTES:
@@ -19,24 +21,50 @@ router.get("*", (req,res) => {
 
 // POST ROUTES:
 
-router.post("/user", (req,res) => {
+// THIS ROUTE BELOW WORKS BUT THE ACCESS TOKEN MUST BE REFRESHED EVERY HOUR.
 
-    console.log (req.body);
+// var transporter = nodemailer.createTransport({
+//     host: 'smtp.gmail.com',
+//     port: 465,
+//     secure: true,
+//     auth: {
+//         type: 'OAuth2',
+//         user: "eneasecondary@gmail.com",
+//         ClientId: "586542372060-qnnhu5t9a7nbpnf806ctvoo19g1fce3i.apps.googleusercontent.com",
+//         ClientSecret: "HAkkWTlWv49ZUSXw5j5WHyFL",
+//         refreshToken: "1/OpAg_t7f4wlZ0ut67RUVIiubQgLJWWACd-RB-aESCz0",
+//         accessToken: "ya29.GlsvBmKqZQkzZthr5uRRELtRqcI25UKfOK5uaP-ry_FKSPzv_4CbXbvCLtW8zLtwgWsBhKIn53u5mE3ocEDIhWCxSZK4vL7RIHO8UKr8s6zwAeA9pOXaO8pXroFV",
+//         expires: 1484314697598
+//     }
+// });
 
-    let firstname = req.body.firstname;
-    let lastname = req.body.lastname;
-    let country = req.body.country;
-    let subject = req.body.subject;
 
-    let newUser = {
-        firstname:firstname,
-        lastname:lastname,
-        country:country,
-        subject:subject
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: process.env.username,
+        pass: process.env.password
     }
+});
 
-    res.json({msg: "Your data ", data: newUser})
+router.post("/user", (req, res) => {
 
-})
+    var mailOptions = {
+        from: `${req.body.email}`,
+        to: `${req.body.email}`,
+        subject: `${req.body.email}`,
+        text: `${req.body.message}`,
+        replyTo: `${req.body.email}`
+    }
+    transporter.sendMail(mailOptions, function (err, res) {
+        console.log(mailOptions);
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Your e-mail has been sent...");
+        }
+    });
+    res.redirect("/");
+});
 
 module.exports = router;
