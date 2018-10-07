@@ -1,10 +1,11 @@
+require("dotenv");
 const express = require("express");
 const router = express.Router();
 const path = require("path"); 
 const nodemailer = require('nodemailer');
 
 
-
+// var smtpTransport = require('nodemailer-smtp-transport');
 // GET ROUTES:
 
 router.get("/", (req,res) => {
@@ -29,20 +30,19 @@ router.get("*", (req,res) => {
 //     secure: true,
 //     auth: {
 //         type: 'OAuth2',
-//         user: "eneasecondary@gmail.com",
-//         ClientId: "586542372060-qnnhu5t9a7nbpnf806ctvoo19g1fce3i.apps.googleusercontent.com",
-//         ClientSecret: "HAkkWTlWv49ZUSXw5j5WHyFL",
-//         refreshToken: "1/OpAg_t7f4wlZ0ut67RUVIiubQgLJWWACd-RB-aESCz0",
-//         accessToken: "ya29.GlsvBmKqZQkzZthr5uRRELtRqcI25UKfOK5uaP-ry_FKSPzv_4CbXbvCLtW8zLtwgWsBhKIn53u5mE3ocEDIhWCxSZK4vL7RIHO8UKr8s6zwAeA9pOXaO8pXroFV",
+//         user: process.env.gmail_email,
+//         ClientId: process.env.CLIENT_ID,
+//         ClientSecret: process.env.CLIENT_SECRET,
+//         refreshToken: process.env.REFRESH_TOKEN,
+//         accessToken: process.env.ACCESS_TOKEN,
 //         expires: 1484314697598
 //     }
 // });
 
-
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: process.env.username,
+        user: process.env.gmail_email,
         pass: process.env.password
     }
 });
@@ -51,7 +51,7 @@ router.post("/user", (req, res) => {
 
     var mailOptions = {
         from: `${req.body.email}`,
-        to: "eneasecondary@gmail.com",
+        to: process.env.gmail_email,
         subject: `${req.body.email}`,
         text: `${req.body.message}`,
         replyTo: `${req.body.email}`
