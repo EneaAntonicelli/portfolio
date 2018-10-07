@@ -25,6 +25,6 @@ $('textarea').each(function(i) {
 //SMOOTHS OUT THE TRANSITION DOWN TO THE CONTACT FORM
 $('#top').click(function() {      // When arrow is clicked
     $([document.documentElement, document.body]).animate({
-        scrollTop: $("#contactcontainer").offset().top
+        scrollTop: $("#contactRow").offset().top
     }, 700);
 });
