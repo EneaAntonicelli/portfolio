@@ -11,6 +11,9 @@ const nodemailer = require('nodemailer');
 router.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+router.get("/thankYou", (req,res) => {
+    res.sendFile(path.join(__dirname, "../views/thankYou.html"));
+});
 
 router.get("/resume", (req,res) => {
     res.json("Resume page route");
@@ -64,7 +67,7 @@ router.post("/user", (req, res) => {
             console.log("Your e-mail has been sent...");
         }
     });
-    res.redirect("/");
+    res.redirect("/thankYou");
 });
 
 module.exports = router;
